@@ -15,7 +15,6 @@ public class Main {
 	public static void main(String[] args) {
 		
 		
-		
 	}
 	
 	
@@ -138,7 +137,7 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfGameMessage() {
-		System.out.println("Welcome to Hangman! Press any letter to guess that letter. \nYour life, progress, and already guessed letters are shown below. \nHave fun!");
+		window.println("Welcome to Hangman! \nPress any letter to guess that letter. \n\nYour life, progress, and already guessed \nletters are shown below. \n\nHave fun!\n");
 	}
 
 	/**
@@ -154,7 +153,7 @@ public class Main {
 	 * 
 	 */
 	public static void printWinningMessage() {
-		System.out.println("Congratulations, you won! No hanging today.");
+		window.println("Congratulations, you won! \nNo hanging today.\n");
 	}
 
 	/**
@@ -162,7 +161,7 @@ public class Main {
 	 * 
 	 */
 	public static void printLosingMessage() {
-		System.out.println("Oh no, you lost! Poor fellow.");
+		window.println("Oh no, you lost! \nPoor fellow.\n");
 	}
 
 	/**
@@ -170,7 +169,7 @@ public class Main {
 	 * 
 	 */
 	public static void printEndOfSessionMessage() {
-		System.out.println("Okay, thanks for playing, hope you had fun!");
+		window.println("Okay, thanks for playing. \nHope you had fun!\n");
 	}
 	
 	
