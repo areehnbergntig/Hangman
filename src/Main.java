@@ -50,7 +50,19 @@ public class Main {
 	 * 
 	 */
 	public static void oneGuess() {
-		//TODO
+		char guess = window.nextChar();
+		
+		if(wordProgress.indexOf(guess) >= 0 || guessedLetters.contains(guess)) {
+			window.println("You already guessed that, guess again!");
+			oneGuess();
+		} else {
+			if(correctWord.indexOf(guess) >= 0) {
+				goodGuess(guess);
+			} else {
+				badGuess(guess);
+			}
+			
+		}
 		
 	}
 	
