@@ -6,7 +6,7 @@ public class Main {
 
 	static HangmanConsoleWindow window = new HangmanConsoleWindow();
 	
-	final static String[] allWords = {"dog", "cat", "bird"}; // A list of words that can be used to play the game.
+	final static String[] allWords = {"dog", "cat", "bird", "snake", "ferret"}; // A list of words that can be used to play the game.
 	
 	static ArrayList<Character> guessedLetters = new ArrayList<Character>();	// A list to be filled with all the incorrectly guessed letters.
 	static String wordProgress; 	// A String which starts out as for example "---" and gets updated with letters as the player guesses correctly.
@@ -66,25 +66,37 @@ public class Main {
 	 * @return The word that has been randomized.
 	 */
 	public static String randomizeWord() {
-		//TODO
+		int wordIndex = (int) (Math.random() * (allWords.length));
 		
-		return ""; //placeholder
+		return allWords[wordIndex];
 	}
 
 	/**
 	 * Performs all necessary actions when the player has guessed a letter correctly.
 	 * 
 	 */
-	public static void goodGuess() {
-		//TODO
+	public static void goodGuess(char c) {
+		window.println("Nice! You guessed correctly!\n");
+		
+		char[] tempArr = wordProgress.toCharArray();
+		
+		int i = correctWord.indexOf(c, 0);
+		while(i >= 0) {
+			tempArr[i] = c;
+			i = correctWord.indexOf(c, i+1);
+		}
+		
+		wordProgress = String.valueOf(tempArr);
 	}
 
 	/**
 	 * Performs all necessary actions when the player has guessed a letter incorrectly.
 	 * 
 	 */
-	public static void badGuess() {
-		//TODO
+	public static void badGuess(char c) {
+		window.println("Oh no! You guessed incorrectly!\n");
+		guessedLetters.add(c);
+		hp--;
 	}
 	
 	
