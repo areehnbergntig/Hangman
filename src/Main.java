@@ -11,9 +11,9 @@ public class Main {
 	static ArrayList<Character> guessedLetters = new ArrayList<Character>();	// A list to be filled with all the incorrectly guessed letters.
 	static String wordProgress; 	// A String which starts out as for example "---" and gets updated with letters as the player guesses correctly.
 	static String correctWord;		// The correct word that the player is supposed to guess. Is used to update the String wordProgress as the game progresses and is used for different comparisons.
+	static int hp;
 	
 	public static void main(String[] args) {
-		
 		
 	}
 	
@@ -145,7 +145,7 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfRoundMessage() {
-		//TODO
+		window.println(wordProgress + "\nYou have " + hp + " tries remaining. \nTime to guess!");
 	}
 
 	/**
