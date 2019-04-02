@@ -27,7 +27,7 @@ public class Main {
 	 * @return True if player wants to play again, false if not.
 	 */
 	public static boolean oneGame() {
-		
+		//TODO
 		
 		return false; //placeholder
 	}
@@ -38,7 +38,7 @@ public class Main {
 	 * @return True if player has won the game, false if not.
 	 */
 	public static boolean oneRound() {
-		
+		//TODO
 		
 		return false; //placeholder
 	}
@@ -48,7 +48,7 @@ public class Main {
 	 * 
 	 */
 	public static void oneGuess() {
-		
+		//TODO
 		
 	}
 	
@@ -64,7 +64,7 @@ public class Main {
 	 * @return The word that has been randomized.
 	 */
 	public static String randomizeWord() {
-		
+		//TODO
 		
 		return ""; //placeholder
 	}
@@ -74,7 +74,7 @@ public class Main {
 	 * 
 	 */
 	public static void goodGuess() {
-		
+		//TODO
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class Main {
 	 * 
 	 */
 	public static void badGuess() {
-		
+		//TODO
 	}
 	
 	
@@ -97,7 +97,7 @@ public class Main {
 	 * @return True if user has guessed correctly, false if not.
 	 */
 	public static boolean hasGuessedCorrectly(char c) {
-		
+		//TODO
 		
 		return false; //placeholder
 	}
@@ -108,7 +108,7 @@ public class Main {
 	 * @return True if user has won, false if not.
 	 */
 	public static boolean hasWon() {
-		
+		//TODO
 		
 		return false; //placeholder
 	}
@@ -119,7 +119,7 @@ public class Main {
 	 * @return True if user wants to play again, false if not.
 	 */
 	public static boolean wantToPlayAgain() {
-		
+		//TODO
 		
 		return false; //placeholder
 	}
@@ -135,7 +135,7 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfGameMessage() {
-		
+		System.out.println("Welcome to Hangman! Press any letter to guess that letter. \nYour life, progress, and already guessed letters are shown below. \nHave fun!");
 	}
 
 	/**
@@ -143,7 +143,7 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfRoundMessage() {
-		
+		//TODO
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class Main {
 	 * 
 	 */
 	public static void printWinningMessage() {
-		
+		System.out.println("Congratulations, you won! No hanging today.");
 	}
 
 	/**
@@ -159,7 +159,7 @@ public class Main {
 	 * 
 	 */
 	public static void printLosingMessage() {
-		
+		System.out.println("Oh no, you lost! Poor fellow.");
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class Main {
 	 * 
 	 */
 	public static void printEndOfSessionMessage() {
-		
+		System.out.println("Okay, thanks for playing, hope you had fun!");
 	}
 	
 	
