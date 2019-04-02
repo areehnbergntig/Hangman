@@ -99,9 +99,11 @@ public class Main {
 	 * @return True if user has guessed correctly, false if not.
 	 */
 	public static boolean hasGuessedCorrectly(char c) {
-		//TODO
-		
-		return false; //placeholder
+		if(correctWord.indexOf(c) >= 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -110,9 +112,11 @@ public class Main {
 	 * @return True if user has won, false if not.
 	 */
 	public static boolean hasWon() {
-		//TODO
-		
-		return false; //placeholder
+		if(wordProgress.equals(correctWord)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
