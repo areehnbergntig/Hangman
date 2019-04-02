@@ -121,9 +121,23 @@ public class Main {
 	 * @return True if user wants to play again, false if not.
 	 */
 	public static boolean wantToPlayAgain() {
-		//TODO
+		boolean result = false;
+		boolean correctInput = false;
+		while(!correctInput) {
+			window.println("Do you want to play again? y/n");
+			char answer = window.nextChar();
+			if(answer == 'y') {
+				correctInput = true;
+				result = true;
+			} else if(answer == 'n') {
+				correctInput = true;
+				result = false;
+			} else {
+				correctInput = false;
+			}
+		}
+		return result;
 		
-		return false; //placeholder
 	}
 	
 	
