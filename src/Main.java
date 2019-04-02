@@ -21,22 +21,35 @@ public class Main {
 	/* --- Big game methods ----- */
 	/* -------------------------- */
 	
+	/**
+	 * Performs all necessary actions to play one game of Hangman.
+	 * 
+	 * @return True if player wants to play again, false if not.
+	 */
 	public static boolean oneGame() {
 		
 		
 		return false; //placeholder
 	}
 
+	/**
+	 * Performs all necessary actions to play one round of Hangman.
+	 * 
+	 * @return True if player has won the game, false if not.
+	 */
 	public static boolean oneRound() {
 		
 		
 		return false; //placeholder
 	}
 
-	public static boolean oneGuess() {
+	/**
+	 * Performs all necessary actions to guess one time.
+	 * 
+	 */
+	public static void oneGuess() {
 		
 		
-		return false; //placeholder
 	}
 	
 	
@@ -45,16 +58,29 @@ public class Main {
 	/* --- Small game methods --- */
 	/* -------------------------- */
 	
+	/**
+	 * Randomizes a word from the static arraylist allWords.
+	 * 
+	 * @return The word that has been randomized.
+	 */
 	public static String randomizeWord() {
 		
 		
 		return ""; //placeholder
 	}
 
+	/**
+	 * Performs all necessary actions when the player has guessed a letter correctly.
+	 * 
+	 */
 	public static void goodGuess() {
 		
 	}
 
+	/**
+	 * Performs all necessary actions when the player has guessed a letter incorrectly.
+	 * 
+	 */
 	public static void badGuess() {
 		
 	}
@@ -65,18 +91,33 @@ public class Main {
 	/* --- Comparison methods --- */
 	/* -------------------------- */
 
-	public static boolean hasGuessedCorrectly() {
+	/**
+	 * Checks if the user has guessed correctly.
+	 * 
+	 * @return True if user has guessed correctly, false if not.
+	 */
+	public static boolean hasGuessedCorrectly(char c) {
 		
 		
 		return false; //placeholder
 	}
 
+	/**
+	 * Checks if the user has won the game.
+	 * 
+	 * @return True if user has won, false if not.
+	 */
 	public static boolean hasWon() {
 		
 		
 		return false; //placeholder
 	}
 
+	/**
+	 * Checks if the user wants to play another game.
+	 * 
+	 * @return True if user wants to play again, false if not.
+	 */
 	public static boolean wantToPlayAgain() {
 		
 		
@@ -89,18 +130,42 @@ public class Main {
 	/* --- Message methods ------ */
 	/* -------------------------- */
 	
+	/**
+	 * Prints a message to be shown at the start of a new game.
+	 * 
+	 */
 	public static void printStartOfGameMessage() {
 		
 	}
 
+	/**
+	 * Prints a message to be shown at the start of a new round.
+	 * 
+	 */
 	public static void printStartOfRoundMessage() {
 		
 	}
 
+	/**
+	 * Prints a message to be shown when the player has won the game.
+	 * 
+	 */
 	public static void printWinningMessage() {
 		
 	}
-	
+
+	/**
+	 * Prints a message to be shown when the player has lost the game.
+	 * 
+	 */
+	public static void printLosingMessage() {
+		
+	}
+
+	/**
+	 * Prints a message to be shown at the end of a play session.
+	 * 
+	 */
 	public static void printEndOfSessionMessage() {
 		
 	}
