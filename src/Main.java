@@ -40,9 +40,9 @@ public class Main {
 	 * @return True if player has won the game, false if not.
 	 */
 	public static boolean oneRound() {
-		//TODO
-		
-		return false; //placeholder
+		printStartOfRoundMessage();
+		oneGuess();
+		return hasWon();
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class Main {
 			window.println("You already guessed that, guess again!");
 			oneGuess();
 		} else {
-			if(correctWord.indexOf(guess) >= 0) {
+			if(hasGuessedCorrectly(guess)) {
 				goodGuess(guess);
 			} else {
 				badGuess(guess);
