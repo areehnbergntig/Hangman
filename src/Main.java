@@ -15,6 +15,14 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		boolean playing = true;
+		
+		while(playing) {
+			playing = oneGame();
+		}
+		
+		printEndOfSessionMessage();
+		
 	}
 	
 	
@@ -29,9 +37,16 @@ public class Main {
 	 * @return True if player wants to play again, false if not.
 	 */
 	public static boolean oneGame() {
-		//TODO
+		printStartOfGameMessage();
+		resetGame(10);
 		
-		return false; //placeholder
+		boolean won = false;
+		while(!won) {
+			won = oneRound();
+		}
+		
+		printWinningMessage();
+		return wantToPlayAgain();
 	}
 
 	/**
@@ -51,10 +66,11 @@ public class Main {
 	 */
 	public static void oneGuess() {
 		char guess = window.nextChar();
+		window.clear();
 		
 		if(wordProgress.indexOf(guess) >= 0 || guessedLetters.contains(guess)) {
-			window.println("You already guessed that, guess again!");
-			oneGuess();
+			window.println("You already guessed that, guess again!\n");
+			oneRound();
 		} else {
 			if(hasGuessedCorrectly(guess)) {
 				goodGuess(guess);
@@ -64,6 +80,18 @@ public class Main {
 			
 		}
 		
+	}
+	
+	/**
+	 * Resets the games variables (to be able to play a new round for example).
+	 * 
+	 * @param newHP What the player's hp is set to.
+	 */
+	public static void resetGame(int newHP) {
+		correctWord = randomizeWord();
+		resetWordprogress();
+		hp = newHP;
+		guessedLetters.clear();
 	}
 	
 	
@@ -81,6 +109,17 @@ public class Main {
 		int wordIndex = (int) (Math.random() * (allWords.length));
 		
 		return allWords[wordIndex];
+	}
+
+	/**
+	 * Resets the String wordProgress to represent each letter of correctWord with a '-'.
+	 * 
+	 */
+	public static void resetWordprogress() {
+		wordProgress = "";
+		for(int i = 0; i < correctWord.length(); i++) {
+			wordProgress += "-";
+		}
 	}
 
 	/**
@@ -152,8 +191,9 @@ public class Main {
 		boolean result = false;
 		boolean correctInput = false;
 		while(!correctInput) {
-			window.println("Do you want to play again? y/n");
+			window.println("Do you want to play again? y/n \n");
 			char answer = window.nextChar();
+			window.clear();
 			if(answer == 'y') {
 				correctInput = true;
 				result = true;
@@ -187,7 +227,7 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfRoundMessage() {
-		window.println(wordProgress + "\nYou have " + hp + " tries remaining. \nTime to guess!");
+		window.println(wordProgress + "\nYou have " + hp + " tries remaining. \nTime to guess! \n");
 	}
 
 	/**
