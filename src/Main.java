@@ -13,6 +13,7 @@ public class Main {
 	static String correctWord;		// The correct word that the player is supposed to guess. Is used to update the String wordProgress as the game progresses and is used for different comparisons.
 	static int hp;
 	
+	
 	public static void main(String[] args) {
 		
 		boolean playing = true;
@@ -22,14 +23,24 @@ public class Main {
 		}
 		
 		printEndOfSessionMessage();
+		window.nextChar();
+		window.exit();
+		
 		
 	}
+	
+	
+	
+	
 	
 	
 	
 	/* -------------------------- */
 	/* --- Big game methods ----- */
 	/* -------------------------- */
+	
+	
+	
 	
 	/**
 	 * Performs all necessary actions to play one game of Hangman.
@@ -40,12 +51,19 @@ public class Main {
 		printStartOfGameMessage();
 		resetGame(10);
 		
-		boolean won = false;
-		while(!won) {
-			won = oneRound();
+		boolean playing = true;
+		while(playing) {
+			if(hasWon()) {
+				printWinningMessage();
+				playing = false;
+			} else if(hasLost()) {
+				printLosingMessage();
+				playing = false;
+			} else {
+				oneRound();
+			}
 		}
 		
-		printWinningMessage();
 		return wantToPlayAgain();
 	}
 
@@ -54,10 +72,9 @@ public class Main {
 	 * 
 	 * @return True if player has won the game, false if not.
 	 */
-	public static boolean oneRound() {
+	public static void oneRound() {
 		printStartOfRoundMessage();
 		oneGuess();
-		return hasWon();
 	}
 
 	/**
@@ -95,10 +112,17 @@ public class Main {
 	}
 	
 	
+	
+	
+	
+	
 
 	/* -------------------------- */
 	/* --- Small game methods --- */
 	/* -------------------------- */
+	
+	
+	
 	
 	/**
 	 * Randomizes a word from the static arraylist allWords.
@@ -151,11 +175,18 @@ public class Main {
 	}
 	
 	
+	
+	
+	
+	
 
 	/* -------------------------- */
 	/* --- Comparison methods --- */
 	/* -------------------------- */
 
+	
+	
+	
 	/**
 	 * Checks if the user has guessed correctly.
 	 * 
@@ -181,6 +212,19 @@ public class Main {
 			return false;
 		}
 	}
+	
+	/**
+	 * Checks if the user has won the game.
+	 * 
+	 * @return True if user has won, false if not.
+	 */
+	public static boolean hasLost() {
+		if(hp<=0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	/**
 	 * Checks if the user wants to play another game.
@@ -201,6 +245,7 @@ public class Main {
 				correctInput = true;
 				result = false;
 			} else {
+				window.println("Wrong input. Please press 'y' or 'n'.\n");
 				correctInput = false;
 			}
 		}
@@ -209,10 +254,17 @@ public class Main {
 	}
 	
 	
+	
+	
+	
+	
 
 	/* -------------------------- */
 	/* --- Message methods ------ */
 	/* -------------------------- */
+	
+	
+	
 	
 	/**
 	 * Prints a message to be shown at the start of a new game.
@@ -251,7 +303,7 @@ public class Main {
 	 * 
 	 */
 	public static void printEndOfSessionMessage() {
-		window.println("Okay, thanks for playing. \nHope you had fun!\n");
+		window.println("Okay, thanks for playing. \nHope you had fun!\n Press any button to exit.\n");
 	}
 	
 	
