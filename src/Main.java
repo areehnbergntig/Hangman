@@ -26,7 +26,6 @@ public class Main {
 		window.nextChar();
 		window.exit();
 		
-		
 	}
 	
 	
@@ -279,15 +278,19 @@ public class Main {
 	 * 
 	 */
 	public static void printStartOfRoundMessage() {
-		window.println(wordProgress + "\nYou have " + hp + " tries remaining. \nTime to guess! \n");
+		window.print("Guessed letters: ");
+		for(char c : guessedLetters) {
+			window.print(Character.toString(c));
+		}
+		window.println("\n" + wordProgress + "\nYou have " + hp + " tries remaining. \nTime to guess!\n");
 	}
-
+	
 	/**
 	 * Prints a message to be shown when the player has won the game.
 	 * 
 	 */
 	public static void printWinningMessage() {
-		window.println("Congratulations, you won! \nNo hanging today.\n");
+		window.println("Congratulations, you won! \nThe word was " + correctWord + "\nNo hanging today.\n");
 	}
 
 	/**
@@ -295,7 +298,7 @@ public class Main {
 	 * 
 	 */
 	public static void printLosingMessage() {
-		window.println("Oh no, you lost! \nPoor fellow.\n");
+		window.println("Oh no, you lost! \nThe word was " + correctWord + " \nPoor fellow.\n");
 	}
 
 	/**
@@ -303,7 +306,7 @@ public class Main {
 	 * 
 	 */
 	public static void printEndOfSessionMessage() {
-		window.println("Okay, thanks for playing. \nHope you had fun!\n Press any button to exit.\n");
+		window.println("Okay, thanks for playing. \nHope you had fun! \n\nPress any button to exit.\n");
 	}
 	
 	
