@@ -6,7 +6,8 @@ public class Main {
 
 	static HangmanConsoleWindow window = new HangmanConsoleWindow();
 	
-	final static String[] allWords = {"dog", "cat", "bird", "snake", "ferret"}; // A list of words that can be used to play the game.
+	final static String[] allWords = {"dog", "cat", "bird", "snake", "ferret", "ball", "club", "police", "fire", "water", 
+			"earth", "wind", "human", "heart", "laugh", "glass", "bottle", "fruit", "pneumonoultramicroscopicsilicovolcanoconiosis", "hello"}; // A list of words that can be used to play the game.
 	
 	static ArrayList<Character> guessedLetters = new ArrayList<Character>();	// A list to be filled with all the incorrectly guessed letters.
 	static String wordProgress; 	// A String which starts out as for example "---" and gets updated with letters as the player guesses correctly.
